@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vscode_freezed_example/models/example_json_serializable.dart';
 
 import 'models/example.dart';
 import 'models/example_freezed.dart';
@@ -53,6 +54,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final exampleFreezed = ExampleFreezed.fromJson({'id': '1', 'name': 'test'});
+  final exampleJsonSerializable =
+      ExampleJsonSerializable.fromJson({'id': '1', 'name': 'test'});
   final example = Example.fromMap({'id': '1', 'name': 'test'});
 
   void _incrementCounter() {
@@ -88,6 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               'You have pushed the button this many times: ${exampleFreezed.name}',
+            ),
+            Text(
+              'You have pushed the button this many times: ${exampleJsonSerializable.name}',
             ),
             Text(
               '$_counter',
